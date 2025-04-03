@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea Shop</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('back.png') no-repeat center center fixed; /* Add background image for the body */
+            background-size: cover;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(90, 79, 61, 0.8); /* Slight transparent background */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #d4edda;
+        }
+
+        /* Hero Section with Background Image */
+        .hero {
+            background: url('back1.png') no-repeat center center/cover; /* Hero section background image */
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            animation: slideIn 2s ease-out;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 2s ease-out 1s;
+        }
+
+        /* Featured Teas Section */
+        .featured-teas {
+            background-color: #333; /* Dark grey background */
+            padding: 40px 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .featured-teas h2 {
+            font-size: 2em;
+            color: #fff;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .tea-row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            animation: slideInUp 2s ease-out;
+        }
+
+        .tea-item {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            opacity: 0;
+            animation: teaItemFadeIn 1.5s ease-out forwards;
+        }
+
+        .tea-item:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .tea-item:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .tea-item:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .tea-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .tea-item h3 {
+            margin: 15px 0;
+            color: #5a4f3d;
+        }
+
+        .tea-item p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .tea-item:hover {
+            transform: translateY(-10px);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* About Us Section */
+        .about-us {
+            background-color: #333;
+            padding: 40px 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .about-us h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #fff;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .about-us p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #ddd;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 2s ease-out 1s;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background-color: #d4edda;
+            padding: 40px 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .reviews h2 {
+            font-size: 2em;
+            color: #5a4f3d;
+            margin-bottom: 30px;
+        }
+
+        .review {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review h3 {
+            color: #5a4f3d;
+            font-size: 1.3em;
+        }
+
+        .review p {
+            font-style: italic;
+            color: #555;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #5a4f3d;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Animation Definitions */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Featured Teas Item Fade-In Animation */
+        @keyframes teaItemFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+
+<body class="home">
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to The Tea Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Your Favorite Tea Awaits</h2>
+        <p>Explore our wide range of tea varieties and place your order today! Whether you're a seasoned tea connoisseur or just starting your tea journey, we have something to satisfy every palate.</p>
+    </section>
+
+    <!-- Featured Teas Section -->
+    <section class="featured-teas">
+        <h2>Featured Teas</h2>
+
+        <div class="tea-row">
+            <div class="tea-item">
+                <img src="black.png" alt="Black Tea">
+                <h3>Black Tea</h3>
+                <p>Our signature black tea is known for its rich, full-bodied flavor and robust aroma. A great option to kickstart your day or enjoy with friends.</p>
+            </div>
+            <div class="tea-item">
+                <img src="green.png" alt="Green Tea">
+                <h3>Green Tea</h3>
+                <p>Enjoy the refreshing taste of green tea, rich in antioxidants. A perfect choice for those looking for a light, healthy tea option.</p>
+            </div>
+            <div class="tea-item">
+                <img src="herbal.png" alt="Herbal Tea">
+                <h3>Herbal Tea</h3>
+                <p>Relax and unwind with our soothing herbal tea blends. Caffeine-free and made with a variety of botanicals, our herbal teas offer a perfect way to end your day.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us">
+        <h2>About Us</h2>
+        <p>At The Tea Shop, we are passionate about offering the finest selection of premium teas. We strive to create an inviting space where tea lovers of all kinds can explore new flavors, discover traditional favorites, and experience the joy of tea.</p>
+        <p>Our teas are sourced from sustainable farms around the world, ensuring both the quality of our products and the welfare of the communities where they are grown. Whether you're a beginner or a tea expert, we have something special for you.</p>
+        <p>We also take pride in our friendly customer service, and our staff is always happy to recommend teas based on your preferences or help you with any questions. From our diverse menu to our cozy ambiance, we hope you feel right at home here.</p>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews">
+        <h2>What Our Customers Are Saying</h2>
+
+        <div class="review">
+            <h3>Jane Doe</h3>
+            <p>"The best tea I've ever had! I absolutely love their green tea - so refreshing and calming. I'll be ordering again soon! The atmosphere in the shop was also amazing. I felt like I was on a little vacation."</p>
+        </div>
+
+        <div class="review">
+            <h3>John Smith</h3>
+            <p>"I ordered the Chai Tea, and it was absolutely perfect. The spices were balanced, and it warmed me right up. I also loved the service — friendly staff who took the time to explain the different teas they offer!"</p>
+        </div>
+
+        <div class="review">
+            <h3>Amy Lee</h3>
+            <p>"I am a huge tea lover, and this place has the best selection. The customer service was fantastic, and the tea was delicious! The staff even recommended a tea that was new to me, and it’s now my new favorite."</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Tea Shop. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
