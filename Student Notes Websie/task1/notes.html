@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Notes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('notes.png'); background-size: cover; background-position: center center; background-attachment: fixed; color: black;">
+    <header>
+        <h1>Student Notes</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="todo.html">To-Do List</a></li>
+                <li><a href="notes.html">Student Notes</a></li>
+                <li><a href="clock.html">Clock</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Notes</h2>
+        <div>
+            <textarea id="noteInput" placeholder="Write your notes here..."></textarea>
+            <button onclick="saveNote()">Save Note</button>
+        </div>
+        <div id="noteList">
+            <!-- Notes will be displayed here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Student App</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

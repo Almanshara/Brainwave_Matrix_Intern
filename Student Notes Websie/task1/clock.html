@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder Clock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('clock.png'); background-size: cover; background-position: center center; background-attachment: fixed; color: white;">
+<body>
+    <header>
+        <h1>Reminder Clock</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="todo.html">To-Do List</a></li>
+                <li><a href="notes.html">Student Notes</a></li>
+                 <li><a href="clock.html">Clock</a></li>
+                <li><a href="about.html">About</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Current Time</h2>
+        <div id="clock"></div>
+
+        <h3>Set a Reminder</h3>
+        <label for="reminder-time">Choose Reminder Time: </label>
+        <input type="time" id="reminder-time" />
+        <button onclick="setReminder()">Set Reminder</button>
+
+        <div id="reminder-message"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Student App</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
